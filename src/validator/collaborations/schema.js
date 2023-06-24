@@ -1,8 +1,7 @@
 const Joi = require('joi');
 
-const CollaborationPayloadSchema = Joi.object({
-  noteId: Joi.string().required(),
-  userId: Joi.string().required(),
+const ExportNotesPayloadSchema = Joi.object({
+  targetEmail: Joi.string().email({ tlds: true }).required(),
 });
 
-module.exports = { CollaborationPayloadSchema };
+module.exports = ExportNotesPayloadSchema;
